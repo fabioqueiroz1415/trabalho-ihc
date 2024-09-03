@@ -1,4 +1,0 @@
-Sistema para fazer pedidos para mesa
-
-- Qr code para identificação da mesa
-- preto, vermelho e branco

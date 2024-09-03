@@ -8,14 +8,56 @@
         <link rel="stylesheet" href="Resources/font-awesome-4.7.0/css/font-awesome.min.css" />
         <link rel="stylesheet" href="style.css" />
 
+        <style>
+            .menu-toggle {
+                display: none; /* Oculta o botão por padrão */
+            }
+            @media (max-width: 768px) {
+                .container {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .container div {
+                    width: 100%;
+                    text-align: left;
+                    margin-bottom: 10px;
+                }
+                .container div a {
+                    display: block;
+                    margin: 5px 0;
+                }
+
+                .main{
+                    flex-direction: column;
+                    align-items: flex-start;
+                    display: none;
+                }
+                .main.active {
+                    display: flex;
+                }
+
+                .menu-toggle {
+                    display: block !important;
+                    background-color: #000000;
+                    color: white;
+                    padding: 10px;
+                    font-size: large;
+                    font-weight: bold;
+                    padding: 20px 30px;
+                    text-align: center;
+                    cursor: pointer;
+                }
+            }
+        </style>
+
     </head>
     <body>
         <div class="container">
             <div class="header">
                 <img src="Resources/final.png" alt="None">
             </div>
+            <div class="menu-toggle">Menu</div>
             <div class="main">
-                <div>
                     <a href="teste.html" target="tela">Principal</a>
                     <a href="#section2">Secundário</a>
                     <a href="#section3">Sobremesas</a>
@@ -24,7 +66,6 @@
                     <a href="#section6" class="icons">
                         <i class="fa fa-shopping-cart fa-lg"></i>
                     </a>
-                </div>
             </div>
             <div class="screen" id="screen-content">
                 
@@ -35,5 +76,22 @@
         </div>
 
         <script src="script.js"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const menuContainer = document.querySelector('.main');
+        
+                if (menuToggle && menuContainer) {
+                    menuToggle.addEventListener('click', function() {
+                        menuContainer.classList.toggle('active');
+                        console.log('Menu toggle clicked');
+                    });
+                } else {
+                    console.log('Menu elements not found');
+                }
+            });
+        </script>
+            
     </body>
 </html>
