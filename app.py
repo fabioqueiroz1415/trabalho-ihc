@@ -14,9 +14,9 @@ def home(subpath):
     else:
         return 'PAGINA NÃO ENCONTRADA'
     
-@app.route('/vendedor', methods=['GET'])
+@app.route('/cozinha', methods=['GET'])
 def vendedor():
-    return render_template('vendedor.html')
+    return render_template('cozinha.html')
 
 @app.route('/post-pedido-carrinho', methods=['POST'])
 def post_pedido_carrinho():
@@ -56,6 +56,10 @@ def incrementar_quantidade():
 def deletar_carrinho():
     data = request.get_json()
     return database.deletar_carrinho(data)
+
+@app.route('/finalizar-pedido/<path:id_pedido>', methods=['GET'])
+def finailzar_pedido(id_pedido):
+    return database.finalizar_pedido(id_pedido)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port='5000')

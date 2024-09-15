@@ -118,22 +118,22 @@ def get_pedidos():
     cursor = conn.cursor()
 
     cursor.execute('''
-            SELECT i.id, p.id_pedido, i.id_item, i.item, i.valor, i.quantidade, p.data_hora, p.id_mesa
+            SELECT i.id, p.id_pedido, i.id_item, i.item, i.valor, i.quantidade, p.data_hora, p.id_mesa, i.situacao
             FROM pedidos p
             JOIN itens_pedido i ON p.id_pedido = i.id_pedido
-            ORDER BY p.data_hora DESC
+            ORDER BY p.id_mesa ASC, p.data_hora ASC
         ''')
 
     rows = cursor.fetchall()
     pedidos_dict = {}
     i = 0
     for row in rows:
-      id_pedido = row[0]
+      id_pedido = row[1]
       if id_pedido not in pedidos_dict:
         pedidos_dict[id_pedido] = {
           'id_pedido': id_pedido,
-          'id_mesa': row[6],
-          'data_hora': row[5],
+          'id_mesa': row[7],
+          'data_hora': row[6],
           'itens': []
         }
       item_data = {
@@ -141,7 +141,8 @@ def get_pedidos():
         'id_item': row[2],
         'item': row[3],
         'valor': row[4],
-        'quantidade': row[5]
+        'quantidade': row[5],
+        'situacao': row[8]
       }
       pedidos_dict[id_pedido]['itens'].append(item_data)
 
@@ -203,6 +204,25 @@ def deletar_carrinho(data):
     conn.commit()
 
     return {'message': 'Carrinho deletado com sucesso', 'status': 200}
+
+  except sqlite3.Error as e:
+    print(f"Erro ao acessar banco de dados: {e}")
+    return {'message': f'{e}', 'status': 500}
+
+  finally:
+    conn.close()
+
+def finalizar_pedido(id_pedido):
+  try:
+    conn = sqlite3.connect('database/database.sqlite')
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        UPDATE itens_pedido SET situacao = 'finalizado' WHERE id_pedido = ?
+    ''', (id_pedido,))
+    conn.commit()
+
+    return {'message': 'Pedido finalizado com sucesso', 'status': 200}
 
   except sqlite3.Error as e:
     print(f"Erro ao acessar banco de dados: {e}")
