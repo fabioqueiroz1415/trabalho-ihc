@@ -5,6 +5,10 @@ import json
 from config import IDS_TO_TABLES
 app = Flask(__name__)
 
+@app.route('/', methods=['GET'])
+def index():
+    return render_template('index.html')
+
 # rota para as mesas
 @app.route('/m/<path:subpath>', methods=['GET'])
 def home(subpath):
