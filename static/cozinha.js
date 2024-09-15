@@ -55,12 +55,12 @@ function criarMesa(id_mesa) {
   table.innerHTML = `
   <thead>
     <tr>
-      <th>data hora</th>
       <th>item</th>
       <th>qtd</th>
       <th>valor (R$)</th>
       <th>id pedido</th>
       <th>situação</th>
+      <th>data hora</th>
     </tr>
   </thead>
   <tbody id="pedidos-mesa-${id_mesa}">
@@ -81,24 +81,22 @@ function add_pedido_mesa_html(data_hora, id_mesa, item, quantidade, valor, id_pe
   var cell1 = row.insertCell(0);
   var cell2 = row.insertCell(1);
   var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
 
-  cell1.innerHTML = data_hora;
-  cell2.innerHTML = item;
-  cell3.innerHTML = quantidade;
-  cell4.innerHTML = valor;
+  cell1.innerHTML = item;
+  cell2.innerHTML = quantidade;
+  cell3.innerHTML = valor;
 
   if (!document.getElementById(`celula-id-pedido-${id_pedido}`)) {
-    var cell5 = row.insertCell(4);
-    cell5.innerHTML = id_pedido;
-    cell5.id = `celula-id-pedido-${id_pedido}`;
-    cell5.rowSpan = num_itens_pedido;
+    var cell4 = row.insertCell(3);
+    cell4.innerHTML = id_pedido;
+    cell4.id = `celula-id-pedido-${id_pedido}`;
+    cell4.rowSpan = num_itens_pedido;
   }
 
   if (!document.getElementById(`situacao-pedido-${id_pedido}`)) {
-    var cell6 = row.insertCell(5);
-    cell6.rowSpan = num_itens_pedido;
-    cell6.innerHTML = `<button id="situacao-pedido-${id_pedido}" onclick="finalizar_pedido(${id_pedido})">${situacao}</button>`;
+    var cell5 = row.insertCell(4);
+    cell5.rowSpan = num_itens_pedido;
+    cell5.innerHTML = `<button id="situacao-pedido-${id_pedido}" onclick="finalizar_pedido(${id_pedido})">${situacao}</button>`;
 
     var botao_situacao_pedido = document.getElementById(`situacao-pedido-${id_pedido}`);
     if(situacao === 'finalizado') {
@@ -107,6 +105,13 @@ function add_pedido_mesa_html(data_hora, id_mesa, item, quantidade, valor, id_pe
     } else if (situacao === 'pendente') {
       botao_situacao_pedido.classList.add('pedido-pendente');
     }
+  }
+
+  if (!document.getElementById(`datahora-pedido-${id_pedido}`)) {
+    var cell6 = row.insertCell(5);
+    cell6.innerHTML = data_hora;
+    cell6.id = `datahora-pedido-${id_pedido}`;
+    cell6.rowSpan = num_itens_pedido;
   }
 }
 

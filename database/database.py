@@ -45,7 +45,6 @@ def get_carrinho(id_mesa):
     conn.close()
 
 def post_pedido(data):
-  print(data)
   try:
     conn = sqlite3.connect('database/database.sqlite')
     cursor = conn.cursor()

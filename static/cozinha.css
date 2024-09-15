@@ -1,25 +1,12 @@
-/*body {
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.green {
+  color: green;
 }
-
-table td {
-    text-align: center;
-    border: 1px solid black;
+.input-container {
+  margin-bottom: 10px;
 }
-
-table {
-  border-collapse: collapse;
+.input-container input {
+  margin-right: 10px;
 }
-
-.container-pedidos {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}*/
-
 
 /* Estilos gerais para o corpo */
 body {

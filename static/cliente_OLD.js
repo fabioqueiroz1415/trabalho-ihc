@@ -171,7 +171,6 @@ function add_pedido_carrinho_html(item, id_item, valor, quantidade) {
 }
 
 async function add_pedido_carrinho_bd(data) {
-  mostra_texto_carrinho('adicionando pedido...');
   await fetch('/post-pedido-carrinho', {
     method: 'POST',
     headers: {
@@ -184,10 +183,9 @@ async function add_pedido_carrinho_bd(data) {
     if (d.status === 200) {
       add_pedido_carrinho_html(item=data.item, id_item=data.id_item, valor=data.valor, quantidade=data.quantidade);
     }
-    mostra_texto_carrinho(d.message);
   })
   .catch((error) => {
-    mostra_texto_carrinho(error);
+    alert(error);
   });
 }
 
