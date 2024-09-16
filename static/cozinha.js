@@ -57,7 +57,7 @@ function criarMesa(id_mesa) {
     <tr>
       <th>item</th>
       <th>qtd</th>
-      <th>valor (R$)</th>
+      <th>und (R$)</th>
       <th>id pedido</th>
       <th>situação</th>
       <th>data hora</th>
