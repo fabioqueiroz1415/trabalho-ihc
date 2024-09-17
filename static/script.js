@@ -23,6 +23,20 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(html => {
                 // Insere o conteúdo HTML na div.screen
                 screenContent.innerHTML = html;
+
+                const scripts = screenContent.querySelectorAll('script');
+                scripts.forEach(script => {
+                    const newScript = document.createElement('script');
+                    
+                    if (script.src) {
+                        newScript.src = script.src;
+                        newScript.async = false;
+                    } else {
+                        newScript.textContent = script.textContent;
+                    }
+
+                    document.body.appendChild(newScript);
+                })
             })
             .catch(error => {
                 // Trata erros, como arquivos não encontrados
@@ -30,6 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 console.error('There was a problem with the fetch operation:', error);
             });
     }
-
-    loadContent('promocoes.html');
+    var id_mesa = document.body.id;
+    loadContent(`/promocoes.html/${id_mesa}`);
 });

@@ -51,23 +51,24 @@
         </style>
 
     </head>
-    <body>
+    <body id="{{id_mesa}}">
         <div class="container">
             <div class="header">
                 <img src="../static/imagens/final.png" alt="None">
             </div>
             <div class="menu-toggle">Menu</div>
             <div class="main">
-                    <a href="/principal.html/{{id_mesa}}" target="screen-content">Principal</a>
-                    <a href="/secundario.html/{{id_mesa}}" target="screen-content">Secundário</a>
-                    <a href="/sobremesa.html/{{id_mesa}}" target="screen-content">Sobremesas</a>
-                    <a href="/bebAlc.html/{{id_mesa}}" target="screen-content">Bebidas alcoólicas</a>
-                    <a href="/bebNaoAlc.html/{{id_mesa}}" target="screen-content">Bebidas não alcoólicas</a>
-                    <a href="/carrinho.html/{{id_mesa}}" class="icons" target="screen-content">
+                    <a href="/principal.html/{{id_mesa}}">Principal</a>
+                    <a href="/secundario.html/{{id_mesa}}">Secundário</a>
+                    <a href="/sobremesa.html/{{id_mesa}}">Sobremesas</a>
+                    <a href="/bebAlc.html/{{id_mesa}}">Bebidas alcoólicas</a>
+                    <a href="/bebNaoAlc.html/{{id_mesa}}">Bebidas não alcoólicas</a>
+                    <a href="/carrinho.html/{{id_mesa}}" class="icons">
                         <i class="fa fa-shopping-cart fa-lg"></i>
                     </a>
             </div>
-            <iframe id="screen-content" name="screen-content" class="screen" src="/promocoes.html/{{id_mesa}}"></iframe>
+            <div id="screen-content" class="screen"></div>
+            <!--<iframe id="screen-content" name="screen-content" class="screen" src="/promocoes.html/{{id_mesa}}"></iframe>-->
             <h3>mesa {{id_mesa}}</h3>
             <div class="foot">
                 <h2><center>Sobre Nós</center></h2>
@@ -88,6 +89,6 @@
                 }
             });
         </script>
-            
+        <script src="../static/script.js"></script>
     </body>
 </html>
