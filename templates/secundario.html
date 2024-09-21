@@ -1,157 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #20202A;
-            color: #FFF;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #FFA500;
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .navbar a {
-            color: #FFF;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .menu {
-            padding: 20px;
-        }
-        .menu-category {
-            margin-bottom: 20px;
-        }
-        .menu-category h2 {
-            color: #FFA500;
-            margin-bottom: 10px;
-        }
-        .menu-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .menu-item {
-            background-color: #333;
-            border-radius: 8px;
-            width: 200px;
-            padding: 10px;
-        }
-        .menu-item img {
-            width: 100%;
-            border-radius: 8px;
-        }
-        .menu-item h3 {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        .menu-item p {
-            font-size: 14px;
-            color: #DDD;
-        }
-        .menu-item .price {
-            color: #FFA500;
-            font-weight: bold;
-        }
-        .menu-item button {
-            display: block;
-            width: 100%;
-            padding: 12px;
-            margin-top: 10px;
-            background: linear-gradient(45deg, #FFA500, #FF7B00);
-            color: #FFF;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-        .menu-item button:hover {
-            background: linear-gradient(45deg, #FF7B00, #FFA500);
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-        }
-        .menu-item button:active {
-            transform: scale(0.98);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-        <!-- Pratos Section -->
-        <div class="menu-category">
-            <h2>Massas</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/lasanha-a-bolonhesa-com-queijo.jpg" alt="Lasanha a Bolonhesa com Queijo">
-                    <h3>Lasanha a Bolonhesa </h3>
-                    <p>Carne a Bolonhesa, Queijo mussarela, Molho Branco.</p>
-                    <p class="price">R$ 42,00</p>
-                    <button  value="42" >Comprar</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/carbonara macarrao.jpg" alt="Macarrao a carbonara">
-                    <h3>Macarrão à carbonara</h3>
-                    <p>Queijo Ralado, Macarrão Espaguete, Bacon Picado.</p>
-                    <p class="price">R$ 28,00</p>
-                    <button  value="28">Comprar</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/ravioli-1536x10.jpg" alt="Ravioli">
-                    <h3>Ravioli</h3>
-                    <p>Ravioli de Queijo e Molho de Tomate Fresco.</p>
-                    <p class="price">R$ 35,00</p>
-                    <button  value="35">Comprar</button>
-                </div>
-            </div>
+<html lang="pt-BR">
+    <head>
+            <title>Secundario</title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css" />
+            <link rel="stylesheet" href="../static/styleProd.css" />
+            <style>
+                @media (max-width: 600px) {
+                    .massas {
+                        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                    }
+                }
+            </style>
+    </head>
+    <body  class="bodysecundario" id="{{id_mesa}}">
 
-            <h2>Saladas</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/Carpaccio.jpg" alt="Carpaccio">
-                    <h3>Carpaccio</h3>
-                    <p>Carpaccio, molho da casa, rúcula, alcaparras e parmesão Acompanha crostini.</p>
-                    <p class="price">R$ 50,00</p>
-                    <button  value="50">Comprar</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/Caprese.jpg" alt="Caprese">
-                    <h3>Caprese</h3>
-                    <p>Muçarela de búfala, tomate assado, tomatinhos e rúcula selvagem Acompanha pão com pesto.</p>
-                    <p class="price">R$ 58,00</p>
-                    <button  value="58">Comprar</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/Sideral.jpg" alt="Sideral">
-                    <h3>Sideral</h3>
-                    <p>Rúcula, alcachofrinha assada na lenha, muçarela de búfala, tomatinhos e castanha do Pará. Acompanha pão com pesto.</p>
-                    <p class="price">R$ 55,00</p>
-                    <button  value="55">Comprar</button>
-                </div>
-            </div>
+                <h2 style="color: #ffffff;">Massas</h2>
 
-            <h2>O melhor da casa</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens/secundario/th-279913910.jpg" alt="X-ratao">
-                    <h3>X-Ratão</h3>
-                    <p>Uma receita especial para pessoas especiais .</p>
-                    <p class="price">R$ 5,00</p>
-                    <button  value="5">Comprar</button>
+                <div class="massas">
+                    <div class="item" id="601" >
+                        <img src="../static/imagens/secundario/lasanha-a-bolonhesa-com-queijo.jpg" alt="Lasanha a Bolonhesa com Queijo">
+                        <div class="description">Lasanha a Bolonhesa </div>
+                        <div class="description2"> Carne a Bolonhesa, Queijo mussarela, Molho Branco.</div>
+                        <div class="price">
+                            <button  value="42"> R$ 42,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="item" id="602">
+                        <img src="../static/imagens/secundario/carbonara macarrao.jpg" alt="Macarrao a carbonara">
+                        <div class="description">Macarrão à carbonara</div>
+                        <div class="description2">Queijo Ralado, Macarrão Espaguete, Bacon Picado.</div>
+                        <div class="price">
+                            <button  value="28" > R$ 28,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="item" id="603">
+                        <img src="../static/imagens/secundario/ravioli-1536x10.jpg" alt="Ravioli">
+                        <div class="description">Ravioli</div>
+                        <div class="description2">Ravioli de Queijo e Molho de Tomate Fresco.</div>
+                        <div class="price">
+                            <button  value="35" > R$ 35,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
                 </div>
-        </div>
+            
+                <h2 style="color: #ffffff;">Saladas</h2>
 
-    </div>
+                <div class="saladas">
 
-</body>
+                    <div class="item" id="604">
+                        <img src="../static/imagens/secundario/Carpaccio.jpg" alt="Carpaccio">
+                        <div class="description">Carpaccio</div>
+                        <div class="description2">Carpaccio, molho da casa, rúcula, alcaparras e parmesão Acompanha crostini.</div>
+                        <div class="price">
+                            <button  value="50" > R$ 50,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="item" id="605">
+                        <img src="../static/imagens/secundario/Caprese.jpg" alt="Caprese">
+                    <div class="description">Caprese</div>
+                        <div class="description2">Muçarela de búfala, tomate assado, tomatinhos e rúcula selvagem Acompanha pão com pesto.</div>
+                        <div class="price">
+                            <button  value="58" > R$ 58,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
+                    <div class="item" id="606">
+                        <img src="../static/imagens/secundario/Sideral.jpg" alt="Sideral">
+                    <div class="description">Sideral</div>
+                        <div class="description2">Rúcula, alcachofrinha assada na lenha, muçarela de búfala, tomatinhos e castanha do Pará. Acompanha pão com pesto.</div>
+                        <div class="price">
+                            <button  value="55" > R$ 55,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <h2 style="color: #ffffff;">O melhor da casa</h2>
+                
+                <div class="best">
+                    <div class="item" id="607">
+                        <img src="../static/imagens/secundario/th-279913910.jpg" alt="X-ratao">
+                    <div class="description">X-Ratão</div>
+                        <div class="description2">Uma receita especial para pessoas especiais .</div>
+                        <div class="price">
+                            <button  value="5" > R$ 5,00  <i class="fa fa-shopping-cart"></i> </button>
+                        </div>
+                    </div>
+                </div>
+
+        <script src="../static/sessoesMenu.js"></script>
+    </body>
 </html>
