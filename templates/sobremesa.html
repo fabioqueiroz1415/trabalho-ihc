@@ -1,162 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #FFF;
-            color: #FFF;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            background-color: #FFA500;
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .navbar a {
-            color: #FFF;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 18px;
-        }
-        .menu {
-            padding: 20px;
-        }
-        .menu-category {
-            margin-bottom: 20px;
-        }
-        .menu-category h2 {
-            color: #20202A;
-            margin-bottom: 10px;
-        }
-        .menu-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .menu-item {
-            background-color: #333;
-            border-radius: 8px;
-            width: 200px;
-            padding: 10px;
-        }
-        .menu-item img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .menu-item h3 {
-            font-size: 16px;
-            margin: 10px 0;
-        }
-        .menu-item p {
-            font-size: 14px;
-            color: #DDD;
-        }
-        .menu-item .price {
-            color: #FF0000;
-            font-weight: bold;
-        }
-        .menu-item button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            margin-top: 10px;
-            background: linear-gradient(45deg, #FFA500, #FF7B00);
-            color: #FFF;
-            border: none;
-            border-radius: 25px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-            transition: all 0.3s ease;
-        }
-        .menu-item button:hover {
-            background: linear-gradient(45deg, #20202A, #20202A);
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        .menu-item button:active {
-            transform: scale(1.4);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
-</head>
-<body>
-        <!-- Pratos Section -->
-        <div class="menu-category">
-            <h2>Sobremesas Geladas</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens/Sobremesas/Casquinha.png" alt="Casquinha de Baunilia">
-                    <h3>Casquinha de Baunilia </h3>
-                    <p>Sobremesa gelada, com uma casquinha e 200 gramas de sorvete de baunilia</p>
-                    <p class="price">R$ 11,99</p>
-                    <button>Adicionar ao carrinho</button>
+<html lang="pt-BR">
+    <head>
+        <title>Sobremesas</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="../static/styleProd.css" />
+        <style>
+            @media (max-width: 600) {
+                .Sobremesas {
+                    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                }
+            }
+        </style>
+    </head>
+    <body class="bodySobremesas "id="{{id_mesa}}">
+        <h2 style="color: #ffffff;">Pizzas</h2>
+        <div class="bebidasAlcoolicas">
+            <div class="item" id="101">
+                <img src="../static/imagens/Sobremesas/Casquinha.png" alt="Imagem 1">
+                <div class="description">
+                    Casquinha de Baunilia
                 </div>
-                <div class="menu-item">
-                    <img src="../static/imagens/Sobremesas/Casquinha de Morango.png" alt="Casquinha de Morango">
-                    <h3>Casquinha de Morango</h3>
-                    <p>Sobremesa gelada, com uma casquinha e 200 gramas de sorvete de morango.</p>
-                    <p class="price">R$ 11,99</p>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\Copo de açai.png" alt="Copo de Açaí">
-                    <h3>Copo de Açaí</h3>
-                    <p>Copo de Açaí, 120 gramas de açaí,castanhas e 80 gramas de sorvete de creme.</p>
-                    <p class="price">R$ 23,99</p>
-                    <button>Adicionar ao carrinho</button>
+                <div class="description2">
+                    Sobremesa gelada, com uma casquinha e 200 gramas de sorvete de baunilia.             </div>
+                <div class="price">
+                    <button value="40">
+                        R$11,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
                 </div>
             </div>
-
-            <h2>Bolos</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\CenouraBolo.png" alt="Bolo de Cenoura">
-                    <h3>Bolo de Cenoura</h3>
-                    <p>Fatia de bolo de cenoura com calda de chocolate.</p>
-                    <p class="price">R$ 6,99,00</p>
-                    <button>Adicionar ao carrinho</button>
+            <div class="item" id="102">
+                <img src="../static/imagens/Sobremesas/Casquinha de Morango.png" alt="Imagem 2">
+                <div class="description">
+                    Casquinha de Morango
                 </div>
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\Bolo-Prestigio.png" alt="Bolo de Prestigio">
-                    <h3>Caprese</h3>
-                    <p>Fatia de bolo de prestigio com beijinhos.</p>
-                    <p class="price">R$ 15,99</p>
-                    <button>Adicionar ao carrinho</button>
-                </div>
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\pudim.png" alt="Pudim de Leite">
-                    <h3>Pudim de Leite</h3>
-                    <p>Pudim de Leite de com calda.</p>
-                    <p class="price">R$ 44,50</p>
-                    <button>Adicionar ao carrinho</button>
+                <div class="description2">
+                    Sobremesa gelada, com uma casquinha e 200 gramas de sorvete de morango.                </div>
+                <div class="price">
+                    <button value="40">
+                        R$11,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
                 </div>
             </div>
-
-            <h2>Doces</h2>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\Brigadeiro.png" alt="Brigadeiro">
-                    <h3>Brigadeiro</h3>
-                    <p>Brigadeiro de Chocolate, cacau 90%, unidade.</p>
-                    <p class="price">R$ 1,20</p>
-                    <button>Adicionar ao carrinho</button>
+            <div class="item" id="103">
+                <img src="../static/imagens/Sobremesas/Copo de açai.png" alt="Imagem 2">
+                <div class="description">
+                    Copo de açaí
                 </div>
-                <div class="menu-item">
-                    <img src="../static/imagens\Sobremesas\goiabada.png" alt="Goiabada">
-                    <h3>Goiabada</h3>
-                    <p>Goiabada com queijo.</p>
-                    <p class="price">R$ 0,70</p>
-                    <button>Adicionar ao carrinho</button>
+                <div class="description2">
+                    Copo de Açaí, 120 gramas de açaí,castanhas e 80 gramas de sorvete de creme.               
+                </div>
+                <div class="price">
+                    <button value="50">
+                        R$23,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
                 </div>
             </div>
-
-</body>
-</html>
+            <div class="item" id="104">
+                <img src="../static/imagens/Sobremesas/CenouraBolo.png" alt="Imagem 2">
+                <div class="description">
+                    Bolo de Cenoura
+                </div>
+                <div class="description2">
+                    Fatia de bolo de cenoura com calda de chocolate.                
+                </div>
+                <div class="price">
+                    <button value="30">
+                        R$6,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="item" id="105">
+                <img src="../static/imagens\Sobremesas\Bolo-Prestigio.png" alt="Imagem 2">
+                <div class="description">
+                    Bolo de Prestigio
+                </div>
+                <div class="description2">
+                    Fatia de bolo de prestigio com beijinhos.             
+                </div>
+                <div class="price">
+                    <button value="50">
+                        R$15,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="item" id="106">
+                <img src="../static/imagens\Sobremesas\pudim.png" alt="Imagem 2">
+                <div class="description">
+                    Pudim de Leite
+                </div>
+                <div class="description2">
+                    Pudim de Leite de com calda.
+                </div>
+                <div class="price">
+                    <button value="40">
+                        R$44,99 <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="item" id="107">
+                <img src="../static/imagens\Sobremesas\Brigadeiro.png" alt="Imagem 2">
+                <div class="description">
+                    Brigadeiro
+                </div>
+                <div class="description2">
+                    Brigadeiro de Chocolate, cacau 90%, unidade.
+                </div>
+                <div class="price">
+                    <button value="40">
+                        R$1,20 <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="item" id="108">
+                <img src="../static/imagens\Sobremesas\goiabada.png" alt="Imagem 2">
+                <div class="description">
+                    Goiabada
+                </div>
+                <div class="description2">
+                    Goiabada com queijo.
+                </div>
+                <div class="price">
+                    <button value="40">
+                        R$0,70 <i class="fa fa-shopping-cart"></i>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+        <script src="../static/sessoesMenu.js"></script>
+    </body>
+</html>    
