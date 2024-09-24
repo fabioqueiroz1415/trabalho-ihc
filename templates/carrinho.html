@@ -10,7 +10,14 @@
     }
     td {
       border: 1px solid black;
+      text-align: center;
     }
+    .td-total {
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-align: right;
+    }
+
     .img-item {
       width: 100px;
       height: 100px;
@@ -48,8 +55,7 @@
     <tbody>
       <tr>
         <td colspan="4"></td>
-        <td>Total: </td>
-        <td colspan="2"><span>R$</span><span id="total">{{valor_total}}</span></td>
+        <td colspan="3" class="td-total"><span>Total: R$</span><span id="total">{{valor_total}}</span></td>
       </tr>
     </tbody>
   </table>
